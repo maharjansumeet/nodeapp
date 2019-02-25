@@ -8,4 +8,9 @@ app.get('/', function(req,res){
 
 app.listen(process.env.PORT || 3000);
 
+function stop() {
+    server.close();
+  }
+
 module.exports = app;
+module.exports.stop = stop;
