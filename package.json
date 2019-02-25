@@ -3,7 +3,9 @@
     "description": "testing CI",
     "version": "0.0.1",
     "private": true,
-    "scripts": {},
+    "scripts": {
+        "test": "./node_modules/.bin/mocha ./test/test.js --exit"
+    },
     "dependencies": {
         "express": "^4.16.4"
     },
