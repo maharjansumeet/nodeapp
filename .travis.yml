@@ -7,7 +7,7 @@ branches:
   only:
   - dev
 matrix:
-  include:
+  - include:
     - name: Testing
         script: npm test
     - name: Deploy
