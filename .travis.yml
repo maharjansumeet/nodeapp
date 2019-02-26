@@ -2,16 +2,14 @@ language: node_js
 node_js: 10
 cache: npm
 install:
-- npm i
+  - npm i
 branches:
   only:
   - dev
-matrix:
-  - include:
-    - name: Testing
-        script: npm test
-    - name: Deploy
-        deploy:
-          api_key:
-            secure: azo1AmBYAo8x91r8YUjlaDwKKgI8+Q3M6opyQHPslZSLJirWs98ephpSAlN1a3FVw7LcvGScQTdrfeYxPcq4o0/gLv4DqdKCmR/+sUiSsWvlZMzC3H2bpAIrVEh/YUqP46XR/hPPc9qLLfO0AM4Y/h+iwFRvxp3epGBMgSqUBeJdkMGdNkFmc8PjcNPUyJXl4aZCnXubO72meAlZyIt53sxs40xCPCMQoFPg3psYZppWuNrFb4WTm8gdq690CEZlExH/6GCDV7K7F2hGrTolJyqLivSCRJc4V+whZlomRi2X9XDtvp3AFRY6atGWAtKEGyKnpwJ/KILh4Tv/aUzjgQGCgUvhohHSyZHLVyt/W1UPsL0dUxf5T4GeC+jAobqros4beh6yD5goTEdpE1pYt1lAhkDLjqVhcB85xF2odS8+r7S8p3jwKuEbqD35ULtVF1Eo3JUeKpCmhCKsxN3w5EXhs7EsnRm+QbwxwQmp9OTFapFGF/huaTsT5OXO3Ph0ON1KIkAl8Qd6XH+dZmt04cPkl/T0beodUx2h+cNwiQ6K+Awj86NYK9/1tfODKBaP2n9KDc5+TCHjXFMraPjTPb+uzTYT5hauxPab3ANEEW2ifEqe0PQ7Gu7gxeN1f3PKPxdHJwc1pxWZfn7xijikt8kABRoyPAb0snABGuYDnLs=
-          dev: iwnodeapp
+  - mee
+script:
+  - npm test
+deploy:
+  api_key:
+    secure: azo1AmBYAo8x91r8YUjlaDwKKgI8+Q3M6opyQHPslZSLJirWs98ephpSAlN1a3FVw7LcvGScQTdrfeYxPcq4o0/gLv4DqdKCmR/+sUiSsWvlZMzC3H2bpAIrVEh/YUqP46XR/hPPc9qLLfO0AM4Y/h+iwFRvxp3epGBMgSqUBeJdkMGdNkFmc8PjcNPUyJXl4aZCnXubO72meAlZyIt53sxs40xCPCMQoFPg3psYZppWuNrFb4WTm8gdq690CEZlExH/6GCDV7K7F2hGrTolJyqLivSCRJc4V+whZlomRi2X9XDtvp3AFRY6atGWAtKEGyKnpwJ/KILh4Tv/aUzjgQGCgUvhohHSyZHLVyt/W1UPsL0dUxf5T4GeC+jAobqros4beh6yD5goTEdpE1pYt1lAhkDLjqVhcB85xF2odS8+r7S8p3jwKuEbqD35ULtVF1Eo3JUeKpCmhCKsxN3w5EXhs7EsnRm+QbwxwQmp9OTFapFGF/huaTsT5OXO3Ph0ON1KIkAl8Qd6XH+dZmt04cPkl/T0beodUx2h+cNwiQ6K+Awj86NYK9/1tfODKBaP2n9KDc5+TCHjXFMraPjTPb+uzTYT5hauxPab3ANEEW2ifEqe0PQ7Gu7gxeN1f3PKPxdHJwc1pxWZfn7xijikt8kABRoyPAb0snABGuYDnLs=
+  dev: iwnodeapp
