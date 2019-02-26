@@ -3,10 +3,11 @@ node_js: 10
 cache: npm
 install:
   - npm i
-branches:
+branches: #where to check for CI
   only:
   - dev
   - mee
+  - master
 script:
   - npm test
 deploy:
