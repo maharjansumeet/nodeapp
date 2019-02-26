@@ -1,10 +1,17 @@
 language: node_js
 node_js: 10
 cache: npm
+install:
+- npm i
 branches:
   only:
   - dev
-deploy:
-  api_key:
-    secure: WqWZcKVtaeSHW9WRe4ozuxiW91rytdU8e6lFF6w4Nxk+U0dI6zfl+rUgk84l5eV8UNvA9cZcFvskFIL7bQdurrg4O2z4igzMCmoZcEvBL2rwM1WVnrX8b0wV/Z8mDqjM+2B3IM7yxfZRMuHsn3Z3R+Dn9EHCIEavDzex3Cr1uqRSMbCx48tTAqNdb+SfErb/SGt19RTjDBAWFWEIwqcjEpEStbGTBqNJrzTn5e/YlsFISsEPHzjmKqebpDdCilKPOtW4eHifUg8IXAz+fOJeyNksAlkEbFB1/cTH5RGJ+irCbcpkMJlLwR/Eqje3JZnBHwWGLnZlBjkpWP+9rZK9RpTEfIpij8HlbXrOCDOQ74UruY3tEgYAwzhPt3omTlRNE52islqEqsBihAvGCY/jffEKX3cq27lK5Dmcs08rfREXL86LkTuko5T9ZmLnzTpNZQmGM+D/CX5zDuKWbk30YSZgXXYN27vsJjATrZ0uj08ftMa4+WFkuCDz6tglLkJ1nRGnJs7nYpznVyGdN7Y17y/SJu8mOWlDVxk7GMeLXINbTfXmxupFr1e95ABN0qBqIYShlZppMOG3CMgdSei7Ob/iEf3+EpNMakTSMI5Mii54B1Vwv/O2D4tOfl4pMOPr5KF2TxFj2p4bdiazEQPmCW0G+/0A/rBNVUQ5KYu/VuA=
-    dev: iwnodeapp
+job:
+  include:
+  - stage: Testing
+    script: npm test
+  - stage: Deploy
+      deploy:
+        api_key:
+          secure: azo1AmBYAo8x91r8YUjlaDwKKgI8+Q3M6opyQHPslZSLJirWs98ephpSAlN1a3FVw7LcvGScQTdrfeYxPcq4o0/gLv4DqdKCmR/+sUiSsWvlZMzC3H2bpAIrVEh/YUqP46XR/hPPc9qLLfO0AM4Y/h+iwFRvxp3epGBMgSqUBeJdkMGdNkFmc8PjcNPUyJXl4aZCnXubO72meAlZyIt53sxs40xCPCMQoFPg3psYZppWuNrFb4WTm8gdq690CEZlExH/6GCDV7K7F2hGrTolJyqLivSCRJc4V+whZlomRi2X9XDtvp3AFRY6atGWAtKEGyKnpwJ/KILh4Tv/aUzjgQGCgUvhohHSyZHLVyt/W1UPsL0dUxf5T4GeC+jAobqros4beh6yD5goTEdpE1pYt1lAhkDLjqVhcB85xF2odS8+r7S8p3jwKuEbqD35ULtVF1Eo3JUeKpCmhCKsxN3w5EXhs7EsnRm+QbwxwQmp9OTFapFGF/huaTsT5OXO3Ph0ON1KIkAl8Qd6XH+dZmt04cPkl/T0beodUx2h+cNwiQ6K+Awj86NYK9/1tfODKBaP2n9KDc5+TCHjXFMraPjTPb+uzTYT5hauxPab3ANEEW2ifEqe0PQ7Gu7gxeN1f3PKPxdHJwc1pxWZfn7xijikt8kABRoyPAb0snABGuYDnLs=
+        dev: iwnodeapp
